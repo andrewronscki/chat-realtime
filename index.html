@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Realchat</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <!-- Página 1 -->
+        <div id="page-home">
+            <header>
+                <section>Realchat</section>
+                <button type="button">Sair</button>
+            </header>
+            <div id="salas">
+                <ul>
+                    <li><a href="#" onclick="entrar('ada')">Ada Lovelace</a></li> 
+                    <li><a href="#" onclick="entrar('alan')">Alan Turing</a></li> 
+                    <li><a href="#" onclick="entrar('grace')">Grace Hopper</a></li> 
+                </ul>
+            </div>
+        </div>
+        <!-- Página 2 -->
+        <div id="page-chat">
+            <header>
+                    <section>Realchat</section>
+                    <button type="button">Sair</button>
+            </header>
+            <div class="box-mensagens"></div>
+
+            <footer>
+                <input type="text" name="mensagem">
+                <button type="button">Enviar</button>
+            </footer>
+        </div>
+        
+        <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCCpjITmTJaxcr2IkN8mfqvVfI5HJWV1dU",
+            authDomain: "chat-d30ae.firebaseapp.com",
+            databaseURL: "https://chat-d30ae.firebaseio.com",
+            projectId: "chat-d30ae",
+            storageBucket: "",
+            messagingSenderId: "639647944302"
+        };
+        firebase.initializeApp(config);
+        </script>
+        
+    </body>
+</html>
