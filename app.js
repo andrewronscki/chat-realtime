@@ -1,6 +1,6 @@
 var salaSelecionada;
 
-function sair(){
+sair = () => {
 
     // Box de mensagens
     var b = document.querySelector('.box-mensagens');
@@ -19,7 +19,7 @@ function sair(){
     page_sala.style.display = 'none';
 }
 
-function entrar(sala){
+entrar = (sala) => {
 
     salaSelecionada = sala;
 
@@ -34,7 +34,7 @@ function entrar(sala){
     firebase
     .database()
     .ref('salas/' + sala)
-    .on('value', function(snapshot){
+    .on('value', snapshot => {
 
         var salaRetorno = snapshot.val();
 
@@ -54,12 +54,12 @@ function entrar(sala){
     });
 }
 
-function carregarMensagensSala(sala){
+carregarMensagensSala = (sala) => {
 
     firebase
     .database()
     .ref('mensagens/' + sala)
-    .on('value', function(snapshot){
+    .on('value', snapshot => {
 
         var mensagens = snapshot.val();
 
@@ -112,7 +112,7 @@ function carregarMensagensSala(sala){
     });
 }
 
-function enviarMensagem(){
+enviarMensagem = () => {
 
     // Coleto a mensagem escrita
     var mensagem = document.querySelector('#mensagem');
@@ -137,12 +137,12 @@ function enviarMensagem(){
 
     // Assim que concluida
     promise
-    .then(function(){
+    .then(() => {
 
         // Limpa mensagem no input
         mensagem.value = '';
     },
-    function(error){
+    (error) => {
         console.error("Problemas ao enviar mensagem");
     });
 }
